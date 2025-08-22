@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <title>Summary Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>Summary</h2>
+  <pre>{{ summary }}</pre>
+
+  <h2>Lab Values</h2>
+  {% if labs %}
+  <table>
+    <tr><th>Test</th><th>Value</th></tr>
+    {% for k,v in labs.items() %}
+      <tr><td>{{k}}</td><td>{{v}}</td></tr>
+    {% endfor %}
+  </table>
+  {% else %}
+    <p>No lab values detected</p>
+  {% endif %}
+
+  <h2>Full Text (first 5000 chars)</h2>
+  <pre>{{ full_text }}</pre>
+
+  <a href="/">Upload another</a>
+</body>
+</html>
