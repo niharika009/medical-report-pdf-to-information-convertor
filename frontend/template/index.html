@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+  <title>Medical Report Summarizer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>Upload Medical Report (PDF)</h2>
+  <form method="post" enctype="multipart/form-data" action="/upload">
+    <input type="file" name="file" accept="application/pdf">
+    <button type="submit">Upload</button>
+  </form>
+</body>
+</html>
